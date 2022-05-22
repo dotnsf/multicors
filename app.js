@@ -16,9 +16,8 @@ app.all( '/*', function( req, res, next ){
         res.setHeader( 'Access-Control-Allow-Origin', '*' );
         res.setHeader( 'Vary', 'Origin' );
       }else{
-        var idx = cors.indexOf( origin );
-        if( idx > -1 ){
-          res.setHeader( 'Access-Control-Allow-Origin', cors[idx] );
+        if( cors.indexOf( origin ) > -1 ){
+          res.setHeader( 'Access-Control-Allow-Origin', origin );
           res.setHeader( 'Vary', 'Origin' );
         }
       }
